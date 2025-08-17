@@ -1,11 +1,11 @@
-{
-    "name": "Acronical",
-    "contact_email": "contact@acronical.uk",
-    "discord_handle": "@acronical",
-    "youtube_handle": "@AcronicalYT",
-    "twitch_handle": "AcronicalYT",
-    "twitter_handle": "@AcronicalYT",
-    "github_handle": "AcronicalYT",
-    "kofi_handle": "acronical",
-    "uk_url": "acronical.uk"
-}
+[
+  {
+    "id": 1,
+    "title": "Project Pastel",
+    "description": "A cosy, and relaxing restaurant management game where you can build your own restaurant, decorate it, and serve customers.",
+    "status": "Concept Stage",
+    "imageUrl": "https://placehold.co/600x400/7A9D54/FFFBF5?text=Project+Pastel&font=press-start-2p",
+    "statusColour": "bg-blue-500 text-white",
+    "link": "https://teli.games/project-pastel"
+  }
+]
