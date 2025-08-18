@@ -14,7 +14,6 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Teli Games API! Use /games to get the list of games.');
 });
 
-// Cycle through the /json directory and create endpoints for each JSON file, including subdirectories
 fs.readdirSync(jsonDirectory).forEach(file => {
     const filePath = path.join(jsonDirectory, file);
     if (fs.statSync(filePath).isDirectory()) {
