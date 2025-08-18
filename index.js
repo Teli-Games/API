@@ -1,8 +1,10 @@
+const fs = require('fs');
+const path = require('path');
+const jsonDirectory = path.join(__dirname, 'json');
 const express = require('express');
 const app = express();
 const PORT = 3001;
 const cors = require('cors');
-const data = require('./json/games.json');
 
 app.use(cors());
 app.use(express.json());
@@ -12,8 +14,35 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Teli Games API! Use /games to get the list of games.');
 });
 
-app.get('/games', (req, res) => {
-    res.json(data);
+// Cycle through the /json directory and create endpoints for each JSON file, including subdirectories
+fs.readdirSync(jsonDirectory).forEach(file => {
+    const filePath = path.join(jsonDirectory, file);
+    if (fs.statSync(filePath).isDirectory()) {
+        fs.readdirSync(filePath).forEach(subFile => {
+            const subFilePath = path.join(filePath, subFile);
+            if (path.extname(subFilePath) === '.json') {
+                const endpoint = `/${file}/${path.basename(subFilePath, '.json')}`;
+                app.get(endpoint, (req, res) => {
+                    fs.readFile(subFilePath, 'utf8', (err, data) => {
+                        if (err) {
+                            return res.status(500).send('Error reading file');
+                        }
+                        res.json(JSON.parse(data));
+                    });
+                });
+            }
+        });
+    } else if (path.extname(filePath) === '.json') {
+        const endpoint = `/${path.basename(filePath, '.json')}`;
+        app.get(endpoint, (req, res) => {
+            fs.readFile(filePath, 'utf8', (err, data) => {
+                if (err) {
+                    return res.status(500).send('Error reading file');
+                }
+                res.json(JSON.parse(data));
+            });
+        });
+    }
 });
 
 app.listen(PORT, () => {
