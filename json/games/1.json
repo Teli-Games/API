@@ -3,6 +3,6 @@
     "title": "Project Pastel",
     "description": "A cosy, and relaxing restaurant management game where you can build your own restaurant, decorate it, and serve customers.",
     "version": "0.0.1",
-    "downloadUrl": "https://dl.teli.games/s/pastel_001/download",
-    "executablePath": "temp.md"
+    "downloadUrl": "https://dl.teli.games/s/pastel_test_000/download",
+    "executablePath": "ProjectPastel.exe"
 }
