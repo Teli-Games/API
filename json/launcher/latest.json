@@ -1,11 +1,11 @@
 {
-  "version": "0.0.1",
-  "notes": "None!",
-  "pub_date": "Today",
+  "version": "1.0.0",
+  "notes": "Initial release of the Teli Games Launcher.",
+  "pub_date": "20-08-2025",
   "platforms": {
     "windows-x86_64": {
       "signature": "",
-      "url": "https://dl.teli.games/s/launcher_001/download"
+      "url": "https://dl.teli.games/s/launcher_100/download"
     }
   }
 }
