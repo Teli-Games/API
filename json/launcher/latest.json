@@ -1,4 +1,11 @@
 {
-    "version": "1.0.0",
-    "downloadUrl": "https://dl.teli.games/s/launcher_100/download"
+  "version": "0.0.1",
+  "notes": "None!",
+  "pub_date": "Today",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "",
+      "url": "https://dl.teli.games/s/launcher_001/download"
+    }
+  }
 }
