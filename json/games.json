@@ -2,10 +2,10 @@
   {
     "id": 1,
     "title": "Project Pastel",
-    "description": "A cosy, and relaxing restaurant management game where you can build your own restaurant, decorate it, and serve customers.",
+    "description": "A cosy, and relaxing café management game where you can build your own café, decorate it, and serve customers.",
     "status": "Concept Stage",
     "imageUrl": "https://placehold.co/600x400/7A9D54/FFFBF5?text=Project+Pastel&font=press-start-2p",
     "statusColour": "bg-blue-500 text-white",
-    "gameUrl": "https://www.teli.games/project-pastel"
+      "gameUrl": "https://www.teli.games/project-pastel"
   }
 ]
