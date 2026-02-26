@@ -3,6 +3,24 @@
     "title": "Project Pastel",
     "description": "A cosy, and relaxing café management game where you can build your own café, decorate it, and serve customers.",
     "version": "0.0.2",
-    "downloadUrl": "https://dl.teli.games/s/pastel_test_001/download",
-    "executablePath": "ProjectPastel.exe"
+    "platforms": {
+        "windows": {
+            "supported": true,
+            "downloadUrl": "https://dl.teli.games/s/pastel_test_001/download",
+            "executablePath": "ProjectPastel.exe",
+            "note": ""
+        },
+        "linux": {
+            "supported": false,
+            "downloadUrl": "https://dl.teli.games/s/pastel_test_001/download",
+            "executablePath": "ProjectPastel.exe",
+            "note": "May run via Proton/Wine"
+        },
+        "macos": {
+            "supported": false,
+            "downloadUrl": null,
+            "executablePath": null,
+            "note": "ew mac"
+        }
+    }
 }

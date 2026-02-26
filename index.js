@@ -14,33 +14,59 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Teli Games API! Use /games to get the list of games.');
 });
 
+const registerEndpoint = (filePath, endpoint) => {
+    app.get(endpoint, (req, res) => {
+        const userPlatform = req.query.platform;
+
+        fs.readFile(filePath, 'utf8', (err, data) => {
+            if (err) return res.status(500).send('Error reading file');
+
+            let gameData;
+            try {
+                gameData = JSON.parse(data);
+            } catch (e) {
+                return res.status(500).send('Invalid JSON format');
+            }
+
+            if (Array.isArray(gameData)) {
+                gameData = gameData.map(game => attachPlatformConfig(game, userPlatform));
+            } else {
+                gameData = attachPlatformConfig(gameData, userPlatform);
+            }
+
+            res.json(gameData);
+        });
+    });
+};
+
+const attachPlatformConfig = (game, userPlatform) => {
+    if (userPlatform && game.platforms) {
+        const platformConfig = game.platforms[userPlatform] || { supported: false };
+        return {
+            ...game,
+            currentPlatform: {
+                ...platformConfig,
+                isProton: !platformConfig.supported && userPlatform === 'linux' && !!game.platforms.windows
+            }
+        };
+    }
+    return game;
+};
+
 fs.readdirSync(jsonDirectory).forEach(file => {
     const filePath = path.join(jsonDirectory, file);
+
     if (fs.statSync(filePath).isDirectory()) {
         fs.readdirSync(filePath).forEach(subFile => {
-            const subFilePath = path.join(filePath, subFile);
-            if (path.extname(subFilePath) === '.json') {
-                const endpoint = `/${file}/${path.basename(subFilePath, '.json')}`;
-                app.get(endpoint, (req, res) => {
-                    fs.readFile(subFilePath, 'utf8', (err, data) => {
-                        if (err) {
-                            return res.status(500).send('Error reading file');
-                        }
-                        res.json(JSON.parse(data));
-                    });
-                });
+            if (path.extname(subFile) === '.json') {
+                const subFilePath = path.join(filePath, subFile);
+                const endpoint = `/${file}/${path.basename(subFile, '.json')}`;
+                registerEndpoint(subFilePath, endpoint);
             }
         });
     } else if (path.extname(filePath) === '.json') {
         const endpoint = `/${path.basename(filePath, '.json')}`;
-        app.get(endpoint, (req, res) => {
-            fs.readFile(filePath, 'utf8', (err, data) => {
-                if (err) {
-                    return res.status(500).send('Error reading file');
-                }
-                res.json(JSON.parse(data));
-            });
-        });
+        registerEndpoint(filePath, endpoint);
     }
 });
 
