@@ -1,15 +1,15 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "notes": "Added logic for platform detection.",
-  "pub_date": "26-02-2026",
+  "pub_date": "27-02-2026",
   "platforms": {
     "windows-x86_64": {
-      "signature": "",
-      "url": "https://dl.teli.games/s/launcher_win64_110/download"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUTjV1d3FaamN3SUdlTDBlWmlzcVBtZTI5NGpEc1Rtb1BJWk9vbzBSNCtmdlNuN3RLMm1LMGZKNEw3SDFuc1dHZ2pZU1ptQ00rSDUxYTJ4dXN6ZDVrMHZpNUN5TjBNZlF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcyMjMwMzczCWZpbGU6dGVsaS1sYXVuY2hlcl8xLjEuMF94NjQtc2V0dXAuZXhlCjJiY0ZpMHF1VnVDOGJTNGNwYjNEV2NhVVBTczdQWUFGcVR2TUl3SjNndkVGRG9UUWVHVGlsdHVtM211OXJ0czgvZHhrTFZCdEYxSGZUZ1JoYWZUa0N3PT0K",
+      "url": "https://dl.teli.games/s/launcher_windows_x64_110/download"
     },
     "linux-x86_64": {
-      "signature": "...",
-      "url": "https://dl.teli.games/s/launcher_lin64_100/download"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUTjV1d3FaamN3SU5GWXFjMURSNGx6OHhVTHpXbWhtMDJOeGRNM2Jib3ptVFdnZnhaV0xCODdQVjlJYXRzL2Zla0VvR0UyNzVITnpxa21qSFlPcWQ2VXVVWWNTSjNqNWdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcyMjMwMzczCWZpbGU6dGVsaS1sYXVuY2hlcl8xLjEuMF94NjRfZW4tVVMubXNpCkJlMVZ5b1dQd29ZSnZ3SUUxZGs0ZGtYcEZEYUM4b1l2WEw0S0M1SFNISmE4d0xKVTc5NUxWSUl4MFpubytjU2RvRzlRRS9uRnh3YUFmYVhFTFRPVUR3PT0K",
+      "url": "https://dl.teli.games/s/launcher_linux_amd64_110/download"
     }
   }
 }
