@@ -12,7 +12,7 @@
         },
         "linux": {
             "supported": false,
-            "downloadUrl": "https://dl.teli.games/s/pastel_test_002/download",
+            "downloadUrl": "https://dl.teli.games/s/pastel_test_003/download",
             "executablePath": "ProjectPastel.exe",
             "note": "May run via Proton/Wine"
         },
